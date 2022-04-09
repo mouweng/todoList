@@ -9,14 +9,26 @@
     <link type="text/css" rel="stylesheet" href="main.css" />
   </head>
   <body>
+    <header id="header">
+      <h1>提醒事项</h1>
+    </header>
     <main>
-      <img src="logo.png" alt="DFINITY logo" />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
+      <div>
+        <textarea name="todoContent" id="todoContent" cols="50"></textarea>
+        <select name="priority" id="priority">
+          <option value="">选择优先级</option>
+          <option value="0">low</option>
+          <option value="1">medium</option>
+          <option value="2">high</option>
+        </select>
+        <button name="addButton" id="addButton"> Add </button>
+      </div>
+      <br>
+      <span id="todoListCount"></span>
+      <section name="todoList" id="todoList"></section>
+      <br>
+      <span id="completeListCount"></span>
+      <section name="completeList" id="completeList"></section>
     </main>
   </body>
 </html>

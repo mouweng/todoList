@@ -20,18 +20,33 @@ form {
     align-items: baseline;
 }
 
-button[type="submit"] {
+
+
+
+textarea{
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 5px;
+    resize:none;
+}
+
+select{
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    position: relative;
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    appearance: none;
+    padding-left: 15px;
+}
+
+button {
     padding: 5px 20px;
     margin: 10px auto;
-    float: right;
-}
-
-#greeting {
-    margin: 10px auto;
-    padding: 10px 60px;
-    border: 1px solid #222;
-}
-
-#greeting:empty {
-    display: none;
 }
