@@ -22,6 +22,10 @@ actor {
   private var todoList = HashMap.HashMap<Text, Todo>(1, Text.equal, Text.hash);
   private var completeList = HashMap.HashMap<Text, Todo>(1, Text.equal, Text.hash);
 
+  // stable
+  private stable var todoListEntries: [(Text, Todo)] = [];
+  private stable var completeListEntries: [(Text, Todo)] = [];
+
   private func createTodo(content: Text, priority: Nat) : Todo {
     let now = Time.now();
     {
@@ -110,7 +114,19 @@ actor {
     completeList.size();
   };
 
-  // public func greet(name : Text) : async Text {
-  //   return Int.toText(Time.now());
-  // };
+
+  // system methods
+  system func preupgrade() {
+    todoListEntries := Iter.toArray(todoList.entries());
+    completeListEntries := Iter.toArray(completeList.entries());
+  };
+
+    // system methods
+  system func postupgrade() {
+    todoList := HashMap.fromIter<Text, Todo>(todoListEntries.vals(), 1, Text.equal, Text.hash);
+    todoListEntries := [];
+
+    completeList := HashMap.fromIter<Text, Todo>(completeListEntries.vals(), 1, Text.equal, Text.hash);
+    completeListEntries := [];
+  };
 };

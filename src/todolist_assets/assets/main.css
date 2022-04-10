@@ -56,28 +56,6 @@ section {
 }
 
 
-.load-ctn {
-    width: 100%;
-}
-
-.load-btn {
-    border: 2px solid #3D8FB8;
-    width: 100px;
-    outline: none;
-    font-size: 16px;
-    border-radius: 100px;
-    margin: 30px auto;
-    color: #666;
-    line-height: 30px;
-    float: right;
-    background: #fff;
-}
-
-.load-btn:hover:active {
-    background: #666;
-    color: #fff;
-}
-
 
 input{
     outline-style: none ;
@@ -101,16 +79,56 @@ select{
 
 div#todoItem{
     display: flex;
-    border-bottom: solid;
+    border-bottom: solid #ccc;
+    height: auto;
 }
 
 div#todoItem p{
     /*width: 100px;*/
     margin-right:auto;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
-div#todoItem button {
+button {
     border: none;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     padding: 4px 4px;
-    margin: 20px 5px;
+    margin: 2px 5px;
+}
+
+button#addButton {
+    background: #3d8fb8e0;
+    padding: 5px 10px;
+}
+button#addButton:hover:active {
+    background: #666;
+}
+
+
+div#todoItem button#todoComplete {
+    background: #3db893e0;
+}
+div#todoItem button#todoComplete:hover:active {
+    background: #666;
+}
+
+div#todoItem button#delCompleteButton {
+    background: rgb(144, 144, 144);
+}
+div#todoItem button#delCompleteButton:hover:active {
+    background: #666;
+}
+
+div#todoItem button#deleteButton {
+    background: rgb(222, 86, 86);
+}
+div#todoItem button#deleteButton:hover:active {
+    background: #666;
+}
+
+div#add {
+    display: flex;
 }

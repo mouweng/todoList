@@ -11,11 +11,19 @@ const addButton = document.getElementById('addButton');
 addButton.addEventListener('click', async (e)=>{
   e.preventDefault();
   const content = todoContent.value.toString();
-  if (content == "") location.reload();
-  if (priority.value != "1" || priority.value != "2" || priority.value != "3") location.reload();
+  if (content == "") {
+    alert("❌ 事项内容不能为空～");
+    return;
+  }
   const p = parseInt(priority.value)
-  await todolist.addTodo(content, p);
-//location.reload();
+  if (p == 0 || p == 1 || p == 2) {
+    await todolist.addTodo(content, p);
+    readList()
+    priority.value = "";
+    todoContent.value = "";
+  } else {
+    alert("❌ 优先级出错～");
+  }
 });
 
 const readList = async () => {
@@ -31,11 +39,11 @@ const readList = async () => {
     div.id = "todoItem";
     var p = document.createElement("p");
     if (item.priority == 2) {
-      p.innerHTML = "🟥 " + item.content.toString();
+      p.innerHTML = "🔥 " + item.content.toString();
     } else if (item.priority == 1){
-      p.innerHTML = "🟧 " + item.content.toString();
+      p.innerHTML = "⚠️ " + item.content.toString();
     } else {
-      p.innerHTML = "🟩 " + item.content.toString();
+      p.innerHTML = "✍🏻 " + item.content.toString();
     }
 
     var todoCompleteButton = document.createElement("button");
@@ -55,6 +63,9 @@ const readList = async () => {
     div.appendChild(deleteButton);
     todoListSection.appendChild(div);
   });
+  if (todoList.length == 0) {
+    todoListSection.innerHTML = "👨🏻‍💻赶快添加事项吧～";
+  }
 
 
 
@@ -67,7 +78,7 @@ const readList = async () => {
     var div = document.createElement("div"); //创建需要添加的元素节点
     div.id = "todoItem";
     var p = document.createElement("p");
-    p.innerHTML = "☑️ " + item.content.toString();
+    p.innerHTML = "✅ " + item.content.toString();
 
     var delCompleteButton = document.createElement("button");
     delCompleteButton.type = "button";
@@ -86,29 +97,35 @@ const readList = async () => {
     div.appendChild(deleteButton);
     completeListSection.appendChild(div);
   });
+  if (completeList.length == 0) {
+    completeListSection.innerHTML = "👨🏻‍💻空空如也～";
+  }
 
 
 document.querySelectorAll("#todoComplete").forEach((node) => {
-  node.addEventListener('click', (event)=>{
+  node.addEventListener('click', async (event)=>{
     console.log('todoComplete click');
     console.log(event.target.value);
-    todolist.complete(event.target.value);
+    await todolist.complete(event.target.value);
+    readList()
   })
 });
 
 document.querySelectorAll("#delCompleteButton").forEach((node) => {
-  node.addEventListener('click', (event)=>{
+  node.addEventListener('click', async (event)=>{
     console.log('delCompleteButton click');
     console.log(event.target.value);
-    todolist.delComplete(event.target.value);
+    await todolist.delComplete(event.target.value);
+    readList()
   })
 });
 
 document.querySelectorAll("#deleteButton").forEach((node) => {
-  node.addEventListener('click', (event)=>{
+  node.addEventListener('click', async (event)=>{
     console.log('deleteButton click!');
     console.log(event.target.value);
-    todolist.delete(event.target.value);
+    await todolist.delete(event.target.value);
+    readList()
   })
 });
 }

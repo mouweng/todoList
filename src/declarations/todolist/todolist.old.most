@@ -1,3 +1,5 @@
+type Todo = {content : Text; createTime : Time; id : Text; priority : Nat};
 actor {
-  
+  stable var completeListEntries : [(Text, Todo)];
+  stable var todoListEntries : [(Text, Todo)]
 };
