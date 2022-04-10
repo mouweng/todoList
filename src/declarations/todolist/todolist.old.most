@@ -1,5 +1,6 @@
-type Todo = {content : Text; createTime : Time; id : Text; priority : Nat};
+type List<T> = ?(T, List<T>);
+type Message = Text;
 actor {
-  stable var completeListEntries : [(Text, Todo)];
-  stable var todoListEntries : [(Text, Todo)]
+  stable var followed : ?(Principal, List<Principal>);
+  stable var messages : ?(Message, List<Message>)
 };
