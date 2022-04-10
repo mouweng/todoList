@@ -100,18 +100,17 @@ select{
 }
 
 div#todoItem{
-    
+    display: flex;
+    border-bottom: solid;
 }
 
-/* div#todoItem p{
-    float: left;
+div#todoItem p{
+    /*width: 100px;*/
+    margin-right:auto;
 }
 
-
-div#todoItem button{
-    float: right;
-} */
 div#todoItem button {
-    padding: 5px 20px;
-    margin: 10px auto;
+    border: none;
+    padding: 4px 4px;
+    margin: 20px 5px;
 }

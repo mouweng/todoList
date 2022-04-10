@@ -1,0 +1,18 @@
+type Todo = 
+ record {
+   content: text;
+   createTime: Time;
+   id: text;
+   priority: nat;
+ };
+type Time = int;
+service : {
+  addTodo: (text, nat) -> ();
+  complete: (text) -> ();
+  delComplete: (text) -> ();
+  delete: (text) -> ();
+  getCompleteList: () -> (vec Todo) query;
+  getCompleteListSize: () -> (nat) query;
+  getTodoList: () -> (vec Todo) query;
+  getTodoListSize: () -> (nat) query;
+}

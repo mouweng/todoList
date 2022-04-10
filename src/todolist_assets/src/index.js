@@ -89,7 +89,7 @@ const readList = async () => {
 
 
 document.querySelectorAll("#todoComplete").forEach((node) => {
-  node.addEventListener('click', ()=>{
+  node.addEventListener('click', (event)=>{
     console.log('todoComplete click');
     console.log(event.target.value);
     todolist.complete(event.target.value);
@@ -97,7 +97,7 @@ document.querySelectorAll("#todoComplete").forEach((node) => {
 });
 
 document.querySelectorAll("#delCompleteButton").forEach((node) => {
-  node.addEventListener('click', ()=>{
+  node.addEventListener('click', (event)=>{
     console.log('delCompleteButton click');
     console.log(event.target.value);
     todolist.delComplete(event.target.value);
@@ -105,7 +105,7 @@ document.querySelectorAll("#delCompleteButton").forEach((node) => {
 });
 
 document.querySelectorAll("#deleteButton").forEach((node) => {
-  node.addEventListener('click', ()=>{
+  node.addEventListener('click', (event)=>{
     console.log('deleteButton click!');
     console.log(event.target.value);
     todolist.delete(event.target.value);
