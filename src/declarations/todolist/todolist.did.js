@@ -7,10 +7,10 @@ export const idlFactory = ({ IDL }) => {
     'priority' : IDL.Nat,
   });
   return IDL.Service({
-    'Delete' : IDL.Func([IDL.Text], [], []),
     'addTodo' : IDL.Func([IDL.Text, IDL.Nat], [], []),
     'complete' : IDL.Func([IDL.Text], [], []),
     'delComplete' : IDL.Func([IDL.Text], [], []),
+    'delete' : IDL.Func([IDL.Text], [], []),
     'getCompleteList' : IDL.Func([], [IDL.Vec(Todo)], ['query']),
     'getCompleteListSize' : IDL.Func([], [IDL.Nat], ['query']),
     'getTodoList' : IDL.Func([], [IDL.Vec(Todo)], ['query']),

@@ -7,10 +7,10 @@ type Todo =
  };
 type Time = int;
 service : {
-  Delete: (text) -> ();
   addTodo: (text, nat) -> ();
   complete: (text) -> ();
   delComplete: (text) -> ();
+  delete: (text) -> ();
   getCompleteList: () -> (vec Todo) query;
   getCompleteListSize: () -> (nat) query;
   getTodoList: () -> (vec Todo) query;

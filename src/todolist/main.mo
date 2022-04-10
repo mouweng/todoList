@@ -67,7 +67,7 @@ actor {
   };
 
   // 删除事项
-  public shared func Delete(id: Text): async () {
+  public shared func delete(id: Text): async () {
     switch(todoList.remove(id)) {
       case (null) {};
       case (?todo) {};

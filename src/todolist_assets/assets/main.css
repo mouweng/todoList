@@ -1,52 +1,117 @@
-body {
-    font-family: sans-serif;
-    font-size: 1.5rem;
+body,
+button {
+    font-family: 'Noto Serif SC', serif;
 }
 
-img {
-    max-width: 50vw;
-    max-height: 25vw;
-    display: block;
-    margin: auto;
+body ,
+header,
+footer {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    gap: 0.5em;
-    flex-flow: row wrap;
-    max-width: 40vw;
-    margin: auto;
-    align-items: baseline;
+h1 {
+    text-align: center;
+    font-weight: 900;
+}
+
+.tip {
+    color: #999;
+}
+
+footer {
+    font-size: 0.8rem;
+    clear: both;
+}
+
+footer p{
+    color: #666;
+    text-align: center;
 }
 
 
-
-
-textarea{
-    width: 300px;
-    height: 40px;
-    border: none;
-    outline: none;
-    box-shadow: 0 0 5px #ccc;
+section {
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.8rem;
+    background: #fff;
+    padding: 10px 20px;
     border-radius: 5px;
-    resize:none;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    margin-top: 20px;
+    border-top: 3px solid;
+    border-top-color: #3D8FB8;
+    text-align: justify;
+}
+
+#todoList {
+    border-top-color: #3D8FB8;
+}
+
+#completeList {
+    border-top-color: #999;
+}
+
+
+.load-ctn {
+    width: 100%;
+}
+
+.load-btn {
+    border: 2px solid #3D8FB8;
+    width: 100px;
+    outline: none;
+    font-size: 16px;
+    border-radius: 100px;
+    margin: 30px auto;
+    color: #666;
+    line-height: 30px;
+    float: right;
+    background: #fff;
+}
+
+.load-btn:hover:active {
+    background: #666;
+    color: #fff;
+}
+
+
+input{
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 6px;
+    width: 300px;
+    height: 25px;
+    font-size: 14px;
 }
 
 select{
-    border-radius: 5px;
-    box-shadow: 0 0 5px #ccc;
-    position: relative;
-    border: none;
-    outline: none;
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
+    padding: 8px;
+    margin-left: 10px;
+    width: auto;
+    text-align: center;
     appearance: none;
-    padding-left: 15px;
+    border-radius: 3px;
+    border-color: #ccc;
 }
 
-button {
+div#todoItem{
+    
+}
+
+/* div#todoItem p{
+    float: left;
+}
+
+
+div#todoItem button{
+    float: right;
+} */
+div#todoItem button {
     padding: 5px 20px;
     margin: 10px auto;
 }
