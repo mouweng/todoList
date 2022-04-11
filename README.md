@@ -4,9 +4,11 @@
 
 ## Preview
 
+- [IC APP - TodoList](https://2esdz-miaaa-aaaai-acfeq-cai.ic0.app/)
+
 ![](https://cdn.jsdelivr.net/gh/mouweng/FigureBed/img/202204110046057.png)
 
-## Running the project locally
+## Quick Start
 
 If you want to test your project locally, you can use the following commands:
 
@@ -37,7 +39,7 @@ Which will start a server at `http://localhost:8080`, proxying API requests to t
 - [@ZJU-Bithacks](https://github.com/ZJUBithacks) offers introductory Dfinity courses
 - [@TIGER-H](https://github.com/TIGER-H) provides front-end technical guidance
 
-## END
+## End
 
 ##### If you like this repo, please give it a star✨
 
