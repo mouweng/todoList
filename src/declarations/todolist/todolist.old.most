@@ -1,6 +1,0 @@
-type List<T> = ?(T, List<T>);
-type Message = Text;
-actor {
-  stable var followed : ?(Principal, List<Principal>);
-  stable var messages : ?(Message, List<Message>)
-};
